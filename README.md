@@ -1,21 +1,24 @@
-# Repository Implementasi CI (Continuous Integration) - MLOps
+# Proyek MLOps: Segmentasi Pelanggan Retail (Customer Segmentation)
 
-Selamat datang di repository **WORKFLOW-CL**. Repository ini didedikasikan khusus untuk memenuhi kriteria implementasi **Continuous Integration (CI)** dalam siklus hidup MLOps.
+Proyek ini merupakan implementasi siklus hidup Machine Learning (MLOps) yang mencakup manajemen eksperimen, pelacakan model, hingga otomatisasi pengujian kode menggunakan standar industri.
 
-## Deskripsi Proyek
-Repository ini menyimpan konfigurasi otomatisasi menggunakan **GitHub Actions**. Tujuan utamanya adalah untuk memastikan bahwa setiap perubahan kode yang diunggah (push) ke repository utama akan melalui proses validasi otomatis untuk menjaga kualitas model dan integritas kode.
+## 📂 Struktur Repository Utama
+- **`membangun_model/`**: Berisi seluruh aset pengembangan model, termasuk script pelatihan (`modelling.py`), file dependensi (`requirements.txt`), serta artefak dan metadata dari MLflow.
+- **`Monitoring_dan_Logging/`**: Berisi script untuk menjalankan prediksi (inference) serta bukti visual bahwa model berhasil melayani permintaan data (serving) dan dipantau secara berkala.
 
-## Fitur Utama
-* **Otomatisasi Validasi**: Menjalankan pengujian otomatis setiap kali ada perubahan pada script model.
-* **Environment Setup**: Melakukan instalasi dependensi Python yang diperlukan seperti `pandas`, `scikit-learn`, dan `mlflow` secara otomatis.
-* **Integrasi MLOps**: Dirancang untuk mendukung alur kerja eksperimen Machine Learning yang terhubung dengan MLflow dan DagsHub.
+## 🚀 Komponen Terintegrasi (Kriteria Submission)
+Untuk memenuhi persyaratan submission Dicoding, proyek ini terhubung dengan repository pendukung berikut:
 
-## Struktur Folder
-* **`.github/workflows/`**: Berisi file konfigurasi YAML (misalnya `ci.yml`) yang menentukan instruksi kerja GitHub Actions.
-* **`MLProject`**: File deskripsi lingkungan untuk standarisasi eksekusi model menggunakan MLflow.
+1. **Kriteria 1 (Eksperimen ML)**:
+   Seluruh riwayat eksperimen dan preprocessing data dapat diakses pada repository khusus eksperimen:
+   👉 [Repository Eksperimen SML](https://github.com/zenyarsya/Eksperimen_SML_Zeny-Arsya-Fortilla)
 
-## Cara Kerja
-1. Pengembang melakukan *push* kode ke repository.
-2. GitHub Actions secara otomatis memicu alur kerja yang didefinisikan dalam folder `.github/workflows/`.
-3. Sistem akan menyiapkan lingkungan Python, menginstal dependensi, dan menjalankan pengujian script.
-4. Status keberhasilan atau kegagalan akan ditampilkan pada tab **Actions**.
+2. **Kriteria 3 (Implementasi CI/CD)**:
+   Otomatisasi pengujian (Continuous Integration) dibangun secara mandiri menggunakan GitHub Actions dan MLflow Project untuk memastikan standarisasi lingkungan eksekusi:
+   👉 [Repository Workflow CI (WORKFLOW-CL)](https://github.com/zenyarsya/WORKFLOW-CL)
+
+## 🛠️ Teknologi yang Digunakan
+- **Python & Scikit-Learn**: Digunakan untuk pemrosesan data dan pemodelan Clustering.
+- **MLflow**: Digunakan untuk tracking eksperimen, pencatatan parameter, dan registrasi model.
+- **DagsHub**: Sebagai remote storage untuk artefak model dan server pelacakan eksperimen.
+- **GitHub Actions**: Menjalankan validasi kode secara otomatis melalui file `.github/workflows/ci.yml`.
